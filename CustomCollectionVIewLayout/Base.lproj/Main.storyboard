@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MaV-du-Hlu">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="2vB-E7-pkb"/>
+                                </constraints>
+                                <state key="normal" title="切换">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapSwitchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mCE-nG-vA2"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="q1p-CP-Jhm">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewLayout key="collectionViewLayout" id="6tE-rg-AdA" customClass="CollectionViewLineLayout"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="UMy-4r-4Os" customClass="CollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rop-pd-rYn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="rop-pd-rYn" secondAttribute="trailing" id="0bd-83-4L3"/>
+                                            <constraint firstAttribute="bottom" secondItem="rop-pd-rYn" secondAttribute="bottom" id="Mvg-rN-eS8"/>
+                                            <constraint firstItem="rop-pd-rYn" firstAttribute="top" secondItem="UMy-4r-4Os" secondAttribute="top" id="P5I-2W-cIl"/>
+                                            <constraint firstItem="rop-pd-rYn" firstAttribute="leading" secondItem="UMy-4r-4Os" secondAttribute="leading" id="mxa-ho-XYZ"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="label" destination="rop-pd-rYn" id="190-z9-axz"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="hLZ-hv-h2a"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="f0b-tm-Fvc"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="MaV-du-Hlu" secondAttribute="trailing" id="8X9-iC-Bov"/>
+                            <constraint firstItem="MaV-du-Hlu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="LuP-g4-f8W"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="q1p-CP-Jhm" secondAttribute="bottom" id="McU-9u-qgJ"/>
+                            <constraint firstItem="q1p-CP-Jhm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ojz-fc-IeK"/>
+                            <constraint firstAttribute="trailing" secondItem="q1p-CP-Jhm" secondAttribute="trailing" id="ouF-dD-aUg"/>
+                            <constraint firstItem="q1p-CP-Jhm" firstAttribute="top" secondItem="MaV-du-Hlu" secondAttribute="bottom" id="viS-az-4jE"/>
+                            <constraint firstItem="MaV-du-Hlu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wxb-wj-Xvc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="q1p-CP-Jhm" id="e9K-gj-zn2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
